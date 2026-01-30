@@ -1,0 +1,26 @@
+@page
+@model CompanyWeb.Pages.Reports.EmployeesByDepartmentModel
+
+<h2>Employees by Department</h2>
+
+@foreach (var d in Model.Departments)
+{
+    <h3>@d.DepartmentName</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var e in d.Employees)
+        {
+            <tr>
+                <td>@e.EmployeeId</td>
+                <td>@e.FirstName @e.LastName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

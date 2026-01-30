@@ -1,0 +1,22 @@
+@page
+@model CompanyWeb.Pages.Reports.EmployeeCountsModel
+
+<h2>Employee Count by Department</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Department</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var d in Model.DepartmentCounts)
+{
+        <tr>
+            <td>@d.DepartmentName</td>
+            <td>@d.EmployeeCount</td>
+        </tr>
+}
+    </tbody>
+</table>

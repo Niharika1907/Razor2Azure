@@ -1,0 +1,42 @@
+@page
+@model CompanyWeb.Pages.Employees.IndexModel
+
+<h2>Employees</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="mb-3">
+    <text>Primary key for Employee table:</text>
+    <br/>
+    <b>employee_id</b>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var e in Model.EmployeeList)
+{
+        <tr>
+            <td>@e.EmployeeId</td>
+            <td>@e.FirstName</td>
+            <td>@e.LastName</td>
+            <td>@e.Department?.DepartmentName</td>
+            <td>
+                <a asp-page="Details" asp-route-id="@e.EmployeeId">Details</a> |
+                <a asp-page="Edit" asp-route-id="@e.EmployeeId">Edit</a> |
+                <a asp-page="Delete" asp-route-id="@e.EmployeeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

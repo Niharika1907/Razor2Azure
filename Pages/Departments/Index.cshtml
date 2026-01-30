@@ -1,0 +1,38 @@
+@page
+@model CompanyWeb.Pages.Departments.IndexModel
+
+<h2>Departments</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="mb-3">
+    <text>Primary key for Department table:</text>
+    <br/>
+    <b>department_id</b>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var d in Model.DepartmentList)
+{
+        <tr>
+            <td>@d.DepartmentId</td>
+            <td>@d.DepartmentName</td>
+            <td>
+                <a asp-page="Details" asp-route-id="@d.DepartmentId">Details</a> |
+                <a asp-page="Edit" asp-route-id="@d.DepartmentId">Edit</a> |
+                <a asp-page="Delete" asp-route-id="@d.DepartmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+@page "{id:int}"
+@model CompanyWeb.Pages.Employees.EditModel
+
+<h2>Edit Employee</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label>ID</label>
+        <input asp-for="Employee.EmployeeId" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.FirstName" class="control-label"></label>
+        <input asp-for="Employee.FirstName" class="form-control" />
+        <span asp-validation-for="Employee.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.LastName" class="control-label"></label>
+        <input asp-for="Employee.LastName" class="form-control" />
+        <span asp-validation-for="Employee.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.DepartmentId" class="control-label">Department</label>
+        <select asp-for="Employee.DepartmentId" class="form-control" asp-items="ViewBag.DepartmentList"></select>
+        <span asp-validation-for="Employee.DepartmentId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Back to list</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
