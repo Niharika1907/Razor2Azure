@@ -331,3 +331,4 @@
 /Users/niharikasanga/projects/4602/CompanyWeb/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.Design.dll
 /Users/niharikasanga/projects/4602/CompanyWeb/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Sqlite.Design.dll
 /Users/niharikasanga/projects/4602/CompanyWeb/bin/Debug/net10.0/company.db
+/Users/niharikasanga/projects/4602/CompanyWeb/obj/Debug/net10.0/CompanyWeb.sourcelink.json
